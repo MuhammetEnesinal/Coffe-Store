@@ -7,7 +7,7 @@ namespace CoffeStore.Models
 
         public int CartId { get; set; }
 
-        public int CustumerId { get; set; }
+        public string CustomerId { get; set; } = null!;
 
         public List<CartItem> CartItems { get; set; } = new List<CartItem>();  
     }

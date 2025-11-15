@@ -1,5 +1,5 @@
 
-using CoffeStore.Migrations;
+using CoffeStore.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace CoffeStore.Models;

@@ -119,8 +119,9 @@ namespace CoffeStore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CustumerId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("CustomerId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("CartId");
 

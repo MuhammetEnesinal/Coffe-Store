@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CoffeStore.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20251115194100_InitialCreate")]
+    [Migration("20251115203853_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -122,8 +122,9 @@ namespace CoffeStore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CustumerId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("CustomerId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("CartId");
 
