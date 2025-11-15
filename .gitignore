@@ -1,0 +1,17 @@
+# Visual Studio / .NET
+
+## Build results
+[Bb]in/
+[Oo]bj/
+
+## Visual Studio generated files
+.vs/
+*.user
+*.suo
+
+## Environment files - Genellikle gizli anahtarlar içerir
+appsettings.Development.json
+
+## Diğerleri
+*.log
+[Tt]humbs.db

@@ -1,0 +1,12 @@
+ @model List<Kategori>
+
+<div class="col-12 col-md-3 col-lg-2 bg-dark text-white p-4">
+      <h4 class="mt-2">Kategoriler</h4>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="/urunler" class="nav-link text-white">Tüm Ürünler</a></li>
+        @foreach (var kategori in Model)
+        {
+          <li class="nav-item"><a href="/urunler/@kategori.Url" class="nav-link text-white">@kategori.KategoriAdi</a></li>
+        }
+      </ul>
+    </div>

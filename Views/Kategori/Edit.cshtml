@@ -1,0 +1,39 @@
+@{
+
+    Layout = "_AdminLayout";
+}
+
+@model KategoriEditModel
+
+
+<section id="kategoriEdit">
+<div class="container py-5">
+    <div class="row justify-content-center ">
+        <div class="col-md-6  border border-secondary rounded-3 p-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0 fw-semibold">Kategori Düzenle</h4>
+                </div>
+                <div class="card-body">
+                    <div class="mb-4" asp-validation-summary="All" class="text-danger"></div>
+                    <form asp-action="Edit" method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="mb-3">
+                            <label asp-for="KategoriAdi" class="form-label fw-semibold"></label>
+                            <input asp-for="KategoriAdi" class="form-control" placeholder="Kategori adını giriniz..." />
+                            <span asp-validation-for="KategoriAdi" class="text-danger small"></span>        
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Url" class="form-label fw-semibold"></label>
+                            <textarea asp-for="Url" class="form-control" rows="3" placeholder="Kategori URL'sini giriniz..."></textarea>
+                            <span asp-validation-for="Url" class="text-danger small"></span>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</section>
+        

@@ -1,0 +1,75 @@
+@{
+    Layout ="_Layout";
+}
+
+@model Urun
+
+   <section id="ProductDetails">
+    <div class="container mt-5 border border-2  p-4 rounded shadow-sm">
+        <div class="row">
+            <div class="col-md-6">
+                
+                    <img src="/images/@Model.ResimUrl" class="img-fluid rounded shadow-sm object-fit-cover" alt="Kahve Görseli">
+                
+            </div>
+
+        <div class="col-md-6 d-flex flex-column justify-content-center ">
+            <h2 class="fw-bold mb-3">@Model.UrunAdi</h2>
+            <p class="text-muted">Kategori: @Model.Kategori.KategoriAdi</p>
+
+            <p class="mt-3">
+                @Model.Aciklama
+            </p>
+
+            <ul class="mt-3">
+                <li><strong>İçerik:</strong> %100 Arabica çekirdekleri</li>
+                <li><strong>Menşei:</strong> Kolombiya dağlarının yüksek bölgeleri</li>
+                <li><strong>Kavurma Derecesi:</strong> Odrta</li>
+                <li><strong>Aroma:</strong> Fındık, kakao ve karamel notaları</li>
+            </ul>
+
+            <h4 class="text-danger mt-4">₺@Model.Fiyat</h4>
+
+            <div class="mt-3">
+                <button class="btn btn-dark me-2">Sepete Ekle</button>
+                <a asp-controller="Urun" asp-action="Index" class="btn btn-outline-dark">Geri Dön</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    </section>
+
+    
+    @{
+    var urunler = (List<Urun>)ViewData["BenzerUrunler"]!;
+        <section id="similarProducts" class="mt-5">
+            <div class="container border p-4 rounded shadow-sm">
+                <h3 class="mb-4">Benzer Ürünler</h3>
+                @if (urunler != null && urunler.Count > 0)
+                {
+                    <div class="row">
+                        @foreach (var urun in urunler)
+                        {
+                            <div class="col-md-3 mb-4">
+                                <div class="card h-100">
+                                    <img src="/images/@urun.ResimUrl" class="card-img-top" alt="@urun.UrunAdi">
+                                    <div class="card-body d-flex flex-column text-center">
+                                            <h5 class="card-title">@urun.UrunAdi</h5>
+                                        <p class="card-text text-danger fw-bold">₺@urun.Fiyat</p>
+                                        <a asp-action="Details" asp-route-id="@urun.Id" class="btn btn-dark mt-auto">Detaylar</a>
+                                    </div>
+                             </div>
+                            </div>
+                         }
+                    </div>
+                    
+                }else
+                {
+                    <div class="alert alert-warning">Benzer ürün bulunamadı.</div>
+                }
+            </div>
+                
+        </section>
+    }

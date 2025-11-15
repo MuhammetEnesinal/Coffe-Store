@@ -1,0 +1,35 @@
+
+@{
+
+    Layout = "_AdminLayout";
+}
+
+@model RoleEditModel
+
+
+<section id="kategoriEdit">
+<div class="container py-5">
+    <div class="row justify-content-center ">
+        <div class="col-md-6  border border-secondary rounded-3 p-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0 fw-semibold">Role Düzenle</h4>
+                </div>
+                <div class="card-body">
+                    <div class="mb-4" asp-validation-summary="All" class="text-danger"></div>
+                    <form asp-action="Edit" method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="mb-3">
+                            <label asp-for="RoleAdi" class="form-label fw-semibold"></label>
+                            <input asp-for="RoleAdi" class="form-control" placeholder="Role adını giriniz..." />
+                            <span asp-validation-for="RoleAdi" class="text-danger small"></span>        
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</section>
+        

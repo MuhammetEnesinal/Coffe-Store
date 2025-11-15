@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a href="#" class="navbar-brand text-warning fw-semibold">
+          <i class="bbi bi-cup-hot me-2"></i> İnal <span class="text-white">Cafe & Bistro</span>
+        </a>    
+
+        <button class="navbar-toggler p-1 fs-6" type="button"" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+            <ul class="navbar-nav ms-auto">
+
+
+                @if(User.IsInRole("Admin")){
+                     <a asp-controller="Admin" asp-action="Index" class="btn btn-danger d-flex align-items-center">
+                        <i class="bi bi-lock-fill me-2"></i> Ana Sayfa
+                    </a>
+                }
+
+                 <li class="nav-item">
+                    <form class="d-flex me-3">
+                        <input class="form-control me-2" type="search" placeholder="Ara" aria-label="Search">
+                        <button class="btn btn-outline-warning" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                </li>  
+
+                <li class="nav-item">
+                    <a asp-controller="Home" asp-action="Index" class="nav-link">Ana Sayfa</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a asp-controller="Urun" asp-action="Index" class="nav-link">Menü</a>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sepetim</a>
+                </li>
+                
+                @if(User.Identity?.IsAuthenticated ==true){
+
+                <li class="nav-item">
+                    <a asp-controller="Account" asp-action="EditUser" class="nav-link">Hesabım</a>
+                </li>
+                 <li class="nav-item">
+                    <a asp-controller="Account" asp-action="LogOut" class="nav-link">Çıkış  Yap</a>
+                </li>
+
+
+
+                }else{
+
+                <li class="nav-item">
+                <a asp-controller="Account" asp-action="Login" class="nav-link">Giriş Yap</a>
+                </li>
+
+                 <li class="nav-item">
+                <a asp-controller="Account" asp-action="Create" class="nav-link">Kayıt Ol</a>
+                </li>
+
+                    }
+            </ul>
+            
+            
+        </div>
+    </div>
+</nav>

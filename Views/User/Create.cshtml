@@ -1,0 +1,42 @@
+@{
+
+Layout="_AdminLayout";
+}
+
+
+@model UserCreateModel
+
+<section id="kategoriCreate">
+<div class="container py-5">
+    <div class="row justify-content-center ">
+        <div class="col-md-6  border border-secondary rounded-3 p-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0 fw-semibold">Kullanıcı Ekle</h4>
+                </div>
+                <div class="card-body">
+                    <div class="mb-4" asp-validation-summary="All" class="text-danger"></div>
+                    <form asp-action="Create" method="post">
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label fw-semibold"></label>
+                            <input asp-for="Email" class="form-control" placeholder="Email adresini giriniz..." />
+                            <span asp-validation-for="Email" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="AdSoyad" class="form-label fw-semibold"></label>
+                            <input asp-for="AdSoyad" class="form-control" placeholder="Ad Soyad giriniz..." />
+                            <span asp-validation-for="AdSoyad" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+

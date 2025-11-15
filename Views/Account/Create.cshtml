@@ -1,0 +1,64 @@
+@model AccountCreateModel
+
+@{
+    Layout = "_Layout";
+}
+
+<section id="AccountCreate">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-5">
+                <div class="card shadow border-0">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h3 class="mb-0">
+                            <i class="bi bi-person-circle me-2"></i>Hesap Oluştur
+                        </h3>
+                    </div>
+
+                    <div class="card-body">
+                        <!-- Doğrulama özetini göster -->
+                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                        <form asp-action="Create" method="post">
+                            <!-- Kullanıcı Adı -->
+                            <div class="mb-3">
+                                <label asp-for="AdSoyad" class="form-label"></label>
+                                <input asp-for="AdSoyad" class="form-control" placeholder="Kullanıcı adınızı girin" />
+                                <span asp-validation-for="AdSoyad" class="text-danger"></span>
+                            </div>
+
+                            <!-- E-posta -->
+                            <div class="mb-3">
+                                <label asp-for="Email" class="form-label"></label>
+                                <input asp-for="Email" class="form-control" placeholder="E-posta adresinizi girin" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            <!-- Şifre -->
+                            <div class="mb-3">
+                                <label asp-for="Password" class="form-label"></label>
+                                <input asp-for="Password" class="form-control" placeholder="Şifrenizi girin" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                            <!-- Şifre (Tekrar) -->
+                            <div class="mb-3">
+                                <label asp-for="ConfirmPassword" class="form-label"></label>
+                                <input asp-for="ConfirmPassword" class="form-control" placeholder="Şifrenizi tekrar girin" />
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+
+                            <!-- Butonlar -->
+                            <div class="d-flex flex-wrap justify-content-between gap-2">
+                                <button type="submit" class="btn btn-dark flex-fill">Kaydol</button>
+                                <a asp-action="Login" class="btn btn-outline-dark flex-fill">Zaten Hesabım Var</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

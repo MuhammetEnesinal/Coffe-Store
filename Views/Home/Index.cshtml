@@ -1,0 +1,187 @@
+﻿
+@{
+Layout = "_Layout";
+
+}
+
+<section id="HomeImage" class="hero-ana-sayfa w-100 d-flex justify-content-center align-items-center text-center text-white">
+
+    <div class="w-75 w-lg-25 bg-dark bg-opacity-50 p-4 rounded-3">
+
+        <h1>Hoşgeldiniz</h1>
+        <p>Kahve, güne enerjik başlamanın en lezzetli yoludur.
+            Her fincan, kendine özgü aromasıyla ruhu canlandırır.
+            Kahve sohbetleri, insanları bir araya getiren küçük bir ritüeldir.
+            Bir yudum kahve, yoğun bir günün stresini hafifletir ve keyif verir. ☕
+        </p>
+        <a asp-controller="Urun" asp-action="Index" class="btn btn-light">Kahve Sipariş Ver</a>
+    </div>
+
+</section>
+
+
+<section class="HomeSlider py-4">
+    @await Component.InvokeAsync("Slider")
+</section>
+
+
+<section id="AboutUs">
+<div class="container bg-dark text-white border border-rounded p-4 my-4 ">
+  <div class="row">
+    <div class="col-md-6">
+         <h2 class="text-center">Hakkımızda</h2>
+          <p>
+            2012 yılında küçük bir sokak köşesinde açılan kafe, bir tutkunun ürünü olarak hayata geçti. 
+            Kurucumuz, kahveyi sadece bir içecek değil, paylaşılacak bir an olarak gördü ve bu vizyonla kafenin kapılarını açtı.
+          </p>
+          <p>
+            İlk günlerden itibaren misafirlerimizi sıcak bir atmosfer ve özenle hazırlanmış kahvelerle karşılamayı amaçladık. 
+            Her fincan, taze çekirdeklerden özenle hazırlanıyor ve ustalıkla sunuluyor. 
+            Amacımız, kahve keyfini sadece tat olarak değil, bir deneyim olarak yaşatmak.
+          </p>
+          <p>
+            Zamanla büyüyen kafe, modern dekorasyonu ve samimi ortamıyla şehrin buluşma noktalarından biri haline geldi. 
+            Burada insanlar, sadece kahve içmekle kalmıyor; sohbet ediyor, anılar biriktiriyor ve kendilerini evlerinde gibi hissediyor.
+          </p>
+    </div>
+    <div class="col-md-6">
+      <img src="/images/kafe.jpg" class="img-fluid rounded" alt="Hakkımızda Resmi">
+    </div>
+  
+
+
+</div>
+
+</section>
+
+
+
+
+<section id="AboutCafe">
+<div class="container mt-4">
+  <div class="row g-5 align-items-stretch">
+
+    <!-- Kart 1 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow rounded">
+        <div class="ratio ratio-16x9"> 
+          <img src="/images/kafe.jpg" class="card-img-top img-fluid" style="object-fit: cover;">
+        </div>
+        <div class="card-body">
+          <p>
+            Kafenin iç mekanı sıcak ve samimi bir atmosfer sunuyor.
+            Ahşap mobilyalar ve yumuşak aydınlatma, huzurlu bir ortam yaratıyor.
+            Rahat koltuklar ve özenle yerleştirilmiş detaylar, misafirlerin kendini evinde hissetmesini sağlıyor.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kart 2 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow rounded">
+        <div class="ratio ratio-16x9">
+          <img src="/images/service.jpg" class="card-img-top img-fluid" style="object-fit: cover;">
+        </div>
+        <div class="card-body">
+          <p>
+            Servis hızlı ve güler yüzlüdür, her misafir özel hissettirir.
+            Baristalar siparişleri özenle hazırlar ve kahve deneyimini keyifli kılar.
+            Müşteri memnuniyeti ön planda tutulur, her talebe dikkatle cevap verilir.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kart 3 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow rounded">
+        <div class="ratio ratio-16x9">
+          <img src="/images/odeme.jpg" class="card-img-top img-fluid" style="object-fit: cover;">
+        </div>
+        <div class="card-body">
+          <p>
+            Ödeme işlemleri hızlı ve sorunsuz bir şekilde gerçekleşir.
+            Nakit, kredi kartı ve temassız ödeme seçenekleri mevcuttur.
+            Misafirler, kolay ve güvenli bir ödeme deneyimi yaşar.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kart 4 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow rounded">
+        <div class="ratio ratio-16x9">
+          <img src="/images/ulasim.jpg" class="card-img-top img-fluid " style="object-fit: cover;">
+        </div>
+        <div class="card-body">
+          <p>
+            Kafe, şehir merkezine yakın konumuyla kolayca bulunabilir.
+            Toplu taşıma ve özel araç ile rahat erişim imkânı sunar.
+            Yol tarifleri açık ve yönlendirme tabelaları sayesinde misafirler sorunsuz bir şekilde kafe girişine ulaşır.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+<section id="ContactUs" class="bg-white text-dark p-4 my-4">
+  <div class="container">
+    <div class="row g-4 justify-content-center border border-rounded p-4 bg-dark text-white text-center"> 
+     
+      <!-- İstek Kutusu -->
+      <div class="col-md-6">
+        <h2>İstek Kutusu</h2>
+        <p>
+          Herhangi bir isteğiniz veya öneriniz varsa lütfen bizimle paylaşın! <br>
+          Sizin geri bildiriminiz bizim için çok değerli. <br>
+          En kısa sürede size geri dönüş yapacağız. ☕
+        </p>
+      </div>
+
+          <!--  Form -->
+      <div class="col-md-6 text-start">
+        <form action="/Home/ContactUs" method="post">
+          <div class="mb-3">
+            <label for="name" class="form-label">İsim</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>  
+          <div class="mb-3">
+            <label for="message" class="form-label">Mesaj</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-warning">Gönder</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="Konum" class="my-4">
+  <div class="container border border-rounded ">
+    <h2 class="text-center mb-3">Kafemiz Nerede?</h2>
+    <div class="row justify-content-center p-4">
+      <div class="col-12 col-lg-6"> <!-- Burada küçültme Bootstrap ile -->
+        <div class="ratio ratio-4x3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=..."
+            style="border:2px solid #040404;"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
